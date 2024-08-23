@@ -21,7 +21,10 @@ We can setup Kafka Connect in two modes:
 
 
 ## Sample Connector Configuration for Standalone Mode
-1. `file` as a source [here]()
+1. `file` as a source [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/File/File_Connectors_Standalone.md)
+
+## Sample Connector Configuration for Distributed Mode
+2. `file` as a source [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/File/File_Connectors_Distributed.md)
 
 
 ## Useful Links-
