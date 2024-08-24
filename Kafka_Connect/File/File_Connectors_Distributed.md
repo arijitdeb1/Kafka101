@@ -2,7 +2,7 @@
 
 ## To set File as Source
 1. Will use Landoop's fast-data-dev docker image to setup Kafka and Kafka Connect.
-2. Copy the docker-compose.yml file from [here]() to a local folder.
+2. Copy the docker-compose.yml file from [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/docker-compose.yml) to a local folder.
 3. Run the below command to start the fast-data-dev docker container.
 
         docker-compose up kafka-cluster

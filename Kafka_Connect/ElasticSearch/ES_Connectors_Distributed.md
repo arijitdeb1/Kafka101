@@ -2,7 +2,7 @@
 
 ## To set Elasticsearch as Sink
 1. Will use Landoop's fast-data-dev docker image to setup Kafka and Kafka Connect.
-2. Copy the docker-compose.yml file from [here]() to a local folder.
+2. Copy the docker-compose.yml file from [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/docker-compose.yml) to a local folder.
 3. Run the below command to start the kafka-cluster(along with kafka connector), postgres and elastic search.
 
          docker-compose up kafka-cluster postgres elasticsearch dejavu
@@ -29,7 +29,7 @@
        key.converter=org.apache.kafka.connect.json.JsonConverter
        topic.schema.ignore=true
 
-5. Insert data into the postgres table `employee` as explained [here]() and check the data in the Elastic Search index. Verify the data from 
+5. Insert data into the postgres table `employee` as explained [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/Database/DB_Connectors_Distributed.md) and check the data in the Elastic Search index. Verify the data from 
    Dejavu's web interface or 
 
       http://127.0.0.1:1358/?appname=*&url=http%3A%2F%2F127.0.0.1%3A9200&mode=edit

@@ -2,10 +2,10 @@
 
 ## To set Database(Postgres) as Source
 1. Will use Landoop's fast-data-dev docker image to setup Kafka and Kafka Connect.
-2. Copy the docker-compose.yml file from [here]() to a local folder.
+2. Copy the docker-compose.yml file from [here](https://github.com/arijitdeb1/Kafka101/blob/main/Kafka_Connect/docker-compose.yml) to a local folder.
 3. Run the below command to start the kafka-cluster(along with kafka connector), postgres and elastic search.
         
-         docker-compose up kafka-cluster postgres elasticsearch
+         docker-compose up kafka-cluster postgres elasticsearch dejavu
 
 ** Note:  1. Make sure docker is installed on the machine.                                                   
           2. Kafka Broker will be available at [localhost:9092](localhost:9092).
