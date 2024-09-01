@@ -7,16 +7,18 @@
 
          docker-compose up kafka-cluster postgres elasticsearch dejavu
 
-** Note:  1. Make sure docker is installed on the machine.                                                   
-          2. Kafka Broker will be available at [localhost:9092](localhost:9092).
-          3. Landoop provides a web interface to manage Kafka Connect at [localhost:3030](localhost:3030).
-          4. Postgres will be available at [localhost:5432](localhost:5432).
-          5. Elastic Search will be available at [localhost:9200](localhost:9200). Validate the same by hitting the URL in the browser.
-          6. Atleast 4GB of memory is required to run the fast-data-dev container.
-          7. Dejavu is a web UI for Elasticsearch. It will be available at [localhost:1358](localhost:1358).
+** Note:  
+* Make sure docker is installed on the machine.                                                   
+* Kafka Broker will be available at [localhost:9092](localhost:9092).
+* Landoop provides a web interface to manage Kafka Connect at [localhost:3030](localhost:3030).
+* Postgres will be available at [localhost:5432](localhost:5432).
+* Elastic Search will be available at [localhost:9200](localhost:9200). Validate the same by hitting the URL in the browser.
+* Atleast 4GB of memory is required to run the fast-data-dev container.
+* Dejavu is a web UI for Elasticsearch. It will be available at [localhost:1358](localhost:1358).
           
 4. Go to Landoop's web interface and click on the `Connectors` tab. Click on `Elastic Search` under `Sinks` and add the below configuration.
 
+       name=sink-elastic-distributed
        connector.class=io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
        type.name=kafka-connect
        key.converter.schemas.enable=true

@@ -7,24 +7,23 @@
         
          docker-compose up kafka-cluster postgres elasticsearch dejavu
 
-** Note:  1. Make sure docker is installed on the machine.                                                   
-          2. Kafka Broker will be available at [localhost:9092](localhost:9092).
-          3. Landoop provides a web interface to manage Kafka Connect at [localhost:3030](localhost:3030).
-          4. Postgres will be available at [localhost:5432](localhost:5432).
-          5. Postgres container will be created with the below configuration.          
+** Note:  
+* Make sure docker is installed on the machine.
+* Kafka Broker will be available at [localhost:9092](localhost:9092).
+* Landoop provides a web interface to manage Kafka Connect at [localhost:3030](localhost:3030).
+* Postgres will be available at [localhost:5432](localhost:5432).
+* Postgres container will be created with the below configuration.          
                 
     POSTGRES_USER: postgres
-    POSTGRES_PASSWORD: postgres
-    POSTGRES_DB: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: postgres
+* Start a shell in the postgres container and create a table and insert some data.
 
-4. Start a shell in the postgres container and create a table and insert some data.
-
-       docker exec -it <postgres-container_id> psql -U postgres
+       docker exec -it <postgres-container_id/name> psql -U postgres
 
        \c - Connect to the database
        \dt - List all the tables
-
-5. Create a table and insert some data.
+* Create a table and insert some data.
 
        CREATE TABLE employee (
        employee_id SERIAL PRIMARY KEY,
@@ -38,8 +37,7 @@
        band VARCHAR(50),
        status VARCHAR(50)
        );
-          
-6. Go to Landoop's web interface and click on the `Connectors` tab. Click on `Jdbc` under `Sources` and add the below configuration.
+* Go to Landoop's web interface and click on the `Connectors` tab. Click `New`. Click on `Jdbc` under `Sources` and add the below configuration.
 
        name=source-postgres-distributed
        connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
@@ -51,7 +49,7 @@
        connection.backoff.ms=10000
        table.whitelist=employee
        mode=incrementing
-       topic.prefix=postgres
+       topic.prefix=postgresemployee
        connection.user=postgres
        value.converter=org.apache.kafka.connect.json.JsonConverter
        connection.url=jdbc:postgresql://postgres:5432/postgres
