@@ -86,7 +86,7 @@ We can setup Kafka Connect in two modes:
         }
        }'
 
-     
+ 
     
 ## Useful Links-
 1. For more details on Kafka Connect, refer to the [official documentation](https://docs.confluent.io/current/connect/index.html).

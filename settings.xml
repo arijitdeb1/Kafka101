@@ -1,0 +1,29 @@
+<settings>
+  <mirrors>
+    <mirror>
+      <id>confluent</id>
+      <mirrorOf>confluent</mirrorOf>
+      <url>https://packages.confluent.io/maven/</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <id>confluent</id>
+      <repositories>
+        <repository>
+          <id>confluent</id>
+          <url>https://packages.confluent.io/maven/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>confluent</activeProfile>
+  </activeProfiles>
+</settings>
